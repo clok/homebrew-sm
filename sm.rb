@@ -5,21 +5,21 @@
 class Sm < Formula
   desc "AWS Secrets Manager CLI Tool"
   homepage "https://clokwork.net/sm/"
-  version "0.1.0-8-ge10cff7"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/clok/sm/releases/download/v0.1.0-8-ge10cff7/sm_0.1.0-8-ge10cff7_darwin_arm64.tar.gz"
-      sha256 "1fb924a69de47ba877c34a68f9daf2f061af71df59de91a6bd8866342fe439b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_darwin_amd64.tar.gz"
+      sha256 "9f4559fa531e11529034584d3c7c9d7d11ff90af719f2121bc3c8d9446071709"
 
       def install
         bin.install "sm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.0-8-ge10cff7/sm_0.1.0-8-ge10cff7_darwin_amd64.tar.gz"
-      sha256 "4daefd792996c9db628dfb8fb8f2816ac864665f2e524d2941b35c1b1b602519"
+    if Hardware::CPU.arm?
+      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_darwin_arm64.tar.gz"
+      sha256 "9c67a217ee56c536db934fde0e335901a2f3df59f643d8cc464e567118577ea1"
 
       def install
         bin.install "sm"
@@ -29,24 +29,24 @@ class Sm < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.0-8-ge10cff7/sm_0.1.0-8-ge10cff7_linux_armv6.tar.gz"
-      sha256 "7289f49d78422debfe12ff5d86d357ce796e29ec60188969f5f161d24a4926ea"
-
-      def install
-        bin.install "sm"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.0-8-ge10cff7/sm_0.1.0-8-ge10cff7_linux_arm64.tar.gz"
-      sha256 "d5dfbb019c03dd890b05d0fcdff1481c81eedf61b43c283a1b5f7b887581785e"
+      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_armv6.tar.gz"
+      sha256 "6dc3fc57b3e3f6a155ac1491e944cbf3c5b4faf2263bf84f94410c4d473c118f"
 
       def install
         bin.install "sm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.0-8-ge10cff7/sm_0.1.0-8-ge10cff7_linux_amd64.tar.gz"
-      sha256 "aea0c0b14b21ac99a0309ad5b4fe2cd888891a388b9b250c2dcbe2877a6ed9f4"
+      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_amd64.tar.gz"
+      sha256 "6b56e32ab9480c05ce8e4b8e296d7d00bca3be98e740144cb602fe5539428baa"
+
+      def install
+        bin.install "sm"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_arm64.tar.gz"
+      sha256 "62e2ad697939132d1541c7081c1340e289aa4d0c339961813202a83ffadd3142"
 
       def install
         bin.install "sm"
