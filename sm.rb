@@ -5,21 +5,21 @@
 class Sm < Formula
   desc "AWS Secrets Manager CLI Tool"
   homepage "https://clokwork.net/sm/"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_darwin_amd64.tar.gz"
-      sha256 "9f4559fa531e11529034584d3c7c9d7d11ff90af719f2121bc3c8d9446071709"
+      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_darwin_amd64.tar.gz"
+      sha256 "a5d263f53282bef65ac3d1097082a7c66ae239267642e8dcb72463788260a391"
 
       def install
         bin.install "sm"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_darwin_arm64.tar.gz"
-      sha256 "9c67a217ee56c536db934fde0e335901a2f3df59f643d8cc464e567118577ea1"
+      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_darwin_arm64.tar.gz"
+      sha256 "175366e627fd39a0165cba65d5548a2d02af3954b7860d147d11f43ad080581c"
 
       def install
         bin.install "sm"
@@ -29,24 +29,24 @@ class Sm < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_armv6.tar.gz"
-      sha256 "6dc3fc57b3e3f6a155ac1491e944cbf3c5b4faf2263bf84f94410c4d473c118f"
-
-      def install
-        bin.install "sm"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_amd64.tar.gz"
-      sha256 "6b56e32ab9480c05ce8e4b8e296d7d00bca3be98e740144cb602fe5539428baa"
+      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_armv6.tar.gz"
+      sha256 "c66ebf3153ba1eafe74a605bce3e28a7b90069154df27242aeeef8fb6a5bf48d"
 
       def install
         bin.install "sm"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.1/sm_0.1.1_linux_arm64.tar.gz"
-      sha256 "62e2ad697939132d1541c7081c1340e289aa4d0c339961813202a83ffadd3142"
+      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_arm64.tar.gz"
+      sha256 "bb60d81eadf637a3dbff463d5059d730b4e3d5b4dea1e3064deaaf3700a52476"
+
+      def install
+        bin.install "sm"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_amd64.tar.gz"
+      sha256 "a38b189725faf0f523ba85a420f437d65a1d373388f2989f33401b6b122e4a3f"
 
       def install
         bin.install "sm"
