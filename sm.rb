@@ -5,21 +5,21 @@
 class Sm < Formula
   desc "AWS Secrets Manager CLI Tool"
   homepage "https://clokwork.net/sm/"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_darwin_amd64.tar.gz"
-      sha256 "a5d263f53282bef65ac3d1097082a7c66ae239267642e8dcb72463788260a391"
+    if Hardware::CPU.arm?
+      url "https://github.com/clok/sm/releases/download/v0.1.3/sm_0.1.3_darwin_arm64.tar.gz"
+      sha256 "4de4e6e9e5587f0772898d7c84d1fb7077b4e0f6dafd39e9c5ceaed86f370b55"
 
       def install
         bin.install "sm"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_darwin_arm64.tar.gz"
-      sha256 "175366e627fd39a0165cba65d5548a2d02af3954b7860d147d11f43ad080581c"
+    if Hardware::CPU.intel?
+      url "https://github.com/clok/sm/releases/download/v0.1.3/sm_0.1.3_darwin_amd64.tar.gz"
+      sha256 "ae833a43747f932354912960f9997ada707a786092ec0818a250bc05aea2a047"
 
       def install
         bin.install "sm"
@@ -28,25 +28,25 @@ class Sm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_armv6.tar.gz"
-      sha256 "c66ebf3153ba1eafe74a605bce3e28a7b90069154df27242aeeef8fb6a5bf48d"
-
-      def install
-        bin.install "sm"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_arm64.tar.gz"
-      sha256 "bb60d81eadf637a3dbff463d5059d730b4e3d5b4dea1e3064deaaf3700a52476"
+      url "https://github.com/clok/sm/releases/download/v0.1.3/sm_0.1.3_linux_arm64.tar.gz"
+      sha256 "14560621367817817aaa88ce4b7b7505b82f6cc84e19cddb2c6e28877769ddca"
 
       def install
         bin.install "sm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/clok/sm/releases/download/v0.1.2/sm_0.1.2_linux_amd64.tar.gz"
-      sha256 "a38b189725faf0f523ba85a420f437d65a1d373388f2989f33401b6b122e4a3f"
+      url "https://github.com/clok/sm/releases/download/v0.1.3/sm_0.1.3_linux_amd64.tar.gz"
+      sha256 "c84a88fe9a355b6cde8cc252c2a3d6159e57f27f5c83e0be5ab883fa59e9a4f4"
+
+      def install
+        bin.install "sm"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/clok/sm/releases/download/v0.1.3/sm_0.1.3_linux_armv6.tar.gz"
+      sha256 "799826440d03f0fe296e2ee48e8011e90156ee133b1dd58b2247ddb76a6ebb21"
 
       def install
         bin.install "sm"
